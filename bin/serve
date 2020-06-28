@@ -1,0 +1,4 @@
+docker run -it --rm \
+    -p 80:80 \
+	-w /app \
+    mandelbrot-api

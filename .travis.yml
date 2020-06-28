@@ -1,0 +1,10 @@
+sudo: false
+
+services:
+  - docker
+
+os:
+  - linux
+
+script:
+  - ./bin/dev-setup

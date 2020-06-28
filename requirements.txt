@@ -1,0 +1,8 @@
+pillow
+pytest
+matplotlib
+numpy
+mpmath
+flask
+waitress
+mandelbrot-orbit
