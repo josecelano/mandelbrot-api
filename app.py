@@ -2,7 +2,7 @@ import os
 import sys
 
 from waitress import serve
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from src.mandelbrot_api.mandelbrot import MandelbrotController
 from src.mandelbrot_api.orbit import OrbitController
 
@@ -14,25 +14,30 @@ if not os.path.exists(OUTPUT_DIRECTORY):
 api = Flask(__name__)
 
 
-@api.route("/")
+@api.route('/')
+def home_redirect():
+    return redirect("/api", code=302)
+
+
+@api.route("/api")
 def entry_point():
     """Entry point for API."""
     return render_template("index.html")
 
 
-@api.route("/tiles", methods=['GET'])
+@api.route("/api/tiles", methods=['GET'])
 def tile_index():
     """Download a tile."""
     return MandelbrotController.invoke(OUTPUT_DIRECTORY)
 
 
-@api.route("/ascii-graphs", methods=['GET'])
+@api.route("/api/ascii-graphs", methods=['GET'])
 def ascii_graph_index():
     """Download a ascii graph."""
     return MandelbrotController.invoke(OUTPUT_DIRECTORY)
 
 
-@api.route("/orbits", methods=['GET'])
+@api.route("/api/orbits", methods=['GET'])
 def orbit_index():
     """Download a orbit graph."""
     return OrbitController.invoke(OUTPUT_DIRECTORY)
