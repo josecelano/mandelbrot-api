@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/josecelano/andelbrot-api.svg?branch=master)](https://travis-ci.org/josecelano/mandelbrot-api)
+[![Build Status](https://travis-ci.com/josecelano/mandelbrot-api.svg?branch=master)](https://travis-ci.com/github/josecelano/mandelbrot-api)
 
 # Mandelbrot API
 
