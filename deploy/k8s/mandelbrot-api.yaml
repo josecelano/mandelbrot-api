@@ -15,7 +15,7 @@ kind: Deployment
 metadata:
   name: mandelbrot-api
 spec:
-  replicas: 3
+  replicas: 16
   selector:
     matchLabels:
       app: mandelbrot-api
