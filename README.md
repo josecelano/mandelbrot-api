@@ -59,6 +59,11 @@ kubectl create -f ./deploy/k8s/mandelbrot-api.yaml
 kubectl create -f ./deploy/k8s/mandelbrot-api-ingress.yaml
 ```
 
+Re-deploy app after changing docker image:
+```
+kubectl rollout restart deployment mandelbrot-api
+```
+
 ## Related projects
 
 This API uses these two command line applications:
